@@ -4,20 +4,21 @@
 
 As wikipedia explains,
 
-    For example, a bit-wise IEEE 754 single precision (32-bit) NaN would be
-	
-    `s111 1111 1xxx xxxx xxxx xxxx xxxx xxxx`
+> For example, a bit-wise IEEE 754 single precision (32-bit) NaN would be
 
-	where s is the sign (most often ignored in applications) and the x sequence
-	represents a non-zero number (the value zero encodes infinities). The most
-	significant bit from x is used to determine the type of NaN: "quiet NaN" or
-	"signaling NaN". *The remaining bits encode a payload (most often ignored in
-	applications).*
+> `s111 1111 1xxx xxxx xxxx xxxx xxxx xxxx`
 
-	[NaN, Wikipedia (2021)](https://en.wikipedia.org/wiki/NaN) (Emphasis mine)
+> where s is the sign (most often ignored in applications) and the x sequence
+> represents a non-zero number (the value zero encodes infinities). The most
+> significant bit from x is used to determine the type of NaN: "quiet NaN" or
+> "signaling NaN". *The remaining bits encode a payload (most often ignored in
+> applications).*
+
+  [NaN, Wikipedia (2021)](https://en.wikipedia.org/wiki/NaN) (Emphasis mine)
 
 The NaN payload is ignored no longer! Using ananas you can imbue entirely new
-meaning to your NaNs.
+meaning to your NaNs. By the way, "ananas" is French for pineapple 🍍, and you
+can't write ananas without NaN.
 
 A NaN has an (ignored) sign of 0 or 1, an exponent of all 1 and a significand.
 The first bit of the significand determines if the NaN is signalling or quiet.
@@ -68,10 +69,13 @@ println!("{:?}", ananas::nans2str(&y2)); // batman! batman!
 
 ## Use case
 
-`¯\_(ツ)_/¯`
+### ¯\_(ツ)_/¯
 
 
 ## License
+
+This code is public domain, under the terms of [the
+Unlicense](https://unlicense.org/).
 
 
 
