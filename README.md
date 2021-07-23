@@ -14,7 +14,7 @@ As wikipedia explains,
 > "signaling NaN". *The remaining bits encode a payload (most often ignored in
 > applications).*
 
-  [NaN, Wikipedia (2021)](https://en.wikipedia.org/wiki/NaN) (Emphasis mine)
+--- [NaN, Wikipedia (2021)](https://en.wikipedia.org/wiki/NaN) (Emphasis mine)
 
 The NaN payload is ignored no longer! Using ananas you can imbue entirely new
 meaning to your NaNs. By the way, "ananas" is French for pineapple 🍍, and you
@@ -69,7 +69,7 @@ println!("{:?}", ananas::nans2str(&y2)); // batman! batman!
 
 ## Use case
 
-### ¯\_(ツ)_/¯
+> ¯\\_(ツ)\_/¯
 
 
 ## License
