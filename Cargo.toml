@@ -3,5 +3,11 @@ name = "ananas"
 version = "0.1.0"
 authors = ["Cyrille Lavigne <lavigne.cyrille@gmail.com>"]
 edition = "2018"
+description = "Transform arbitrary data to Not-A-Number (NaN) payloads."
+readme = "README.md"
+repository = "https://github.com/clavigne/ananas"
+license = "Unlicense"
+keywords = ["float", "nan", "payload", "steganography"]
+categories = ["encoding"]
 
 [dependencies]

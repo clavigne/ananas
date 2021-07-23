@@ -67,6 +67,17 @@ println!("{:?}", ananas::nans2str(&y1)); // nan nan nan nan
 println!("{:?}", ananas::nans2str(&y2)); // batman! batman!
 ```
 
+## Installation
+
+Not sure why you would bother but ananas can be imported in your project by
+adding
+
+```toml
+[dependencies]
+ananas = 0.1.0
+```
+to your project's `Cargo.toml`. 
+
 ## Use case
 
 > ¯\\_(ツ)\_/¯
