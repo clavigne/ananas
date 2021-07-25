@@ -39,32 +39,32 @@ stored in each f32 number,
  ```rust
 // Encoding to NaNs
 let s = "Hello, world!";
-let x = ananas::to_nanvec(&s.as_bytes());
+let x = ananas::bytes_to_nan(&s.as_bytes());
 println!("{:?}", x); // prints '[NaN, NaN, NaN, NaN, NaN, NaN, NaN]'
 
 // Decoding from NaNs
-let y = String::from_utf8(ananas::from_nanvec(&x)).unwrap();
+let y = String::from_utf8(ananas::nan_to_bytes(&x)).unwrap();
 assert_eq!(y, s);
 ```
 This crate provides convenience translators to and from strings. 
 
 NaNs are propagated and this maintains the payload,
 ```rust
-let x = ananas::str2nans("😎");
+let x = ananas::str_to_nan("😎");
 let y = [x[0] + 10000.0, x[1] / 0.0];
 assert!(y[0].is_nan());
-assert_eq!(ananas::nans2str(&y).unwrap(),  "😎");
+assert_eq!(ananas::nan_to_str(&y).unwrap(),  "😎");
 ```
 
 This can produce strange behaviour when two NaNs meet, such as loss of
 commutativity,
 ```rust
-let x1 = ananas::str2nans("nan nan nan nan");
-let x2 = ananas::str2nans("batman! batman!");
+let x1 = ananas::str_to_nan("nan nan nan nan");
+let x2 = ananas::str_to_nan("batman! batman!");
 let y1 :Vec<_> = x1.iter().zip(&x2).map(|(a,b)| a*b).collect();
 let y2 :Vec<_> = x1.iter().zip(&x2).map(|(a,b)| b * a).collect();
-println!("{:?}", ananas::nans2str(&y1)); // nan nan nan nan
-println!("{:?}", ananas::nans2str(&y2)); // batman! batman!
+println!("{:?}", ananas::nan_to_str(&y1)); // nan nan nan nan
+println!("{:?}", ananas::nan_to_str(&y2)); // batman! batman!
 ```
 
 ## Installation
@@ -74,7 +74,7 @@ adding
 
 ```toml
 [dependencies]
-ananas = 0.1.0
+ananas = 0.2.0
 ```
 to your project's `Cargo.toml`. 
 
