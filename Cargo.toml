@@ -1,6 +1,6 @@
 [package]
 name = "ananas"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Cyrille Lavigne <lavigne.cyrille@gmail.com>"]
 edition = "2018"
 description = "Transform arbitrary data to Not-A-Number (NaN) payloads."
